@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustic Roots Menu</title>
+    <link rel="stylesheet" href="Menu.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="stars"></div>
+    <button class="back-button" onclick="goBack()"> 
+        <ion-icon name="arrow-back-outline"></ion-icon> Back 
+</button>
+    <div class="menu-wrapper">
+        <h1>Our Menu</h1>
+
+        <section class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('Steak.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Galactic Grilled Steak</h3>
+                        <p>$29.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('quinoasalad.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Quantum Quinoa Salad</h3>
+                        <p>$21.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('salmon.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Starship Salmon</h3>
+                        <p>$26.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('Asparagus-risotto.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Astral Asparagus Risotto</h3>
+                        <p>$22.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('Spicy-Thai-Noodle-Bowls-square-1200.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Nova Noodle Bowl</h3>
+                        <p>$24.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('stuffedchicken.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Stellar Stuffed Chicken</h3>
+                        <p>$28.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Appetizers</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('Garlic-sauteed-calamari.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Cosmic Calamari</h3>
+                        <p>$12.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('nachos.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Nebula Nachos</h3>
+                        <p>$10.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('avocado-toast.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Astro Avocado Toast</h3>
+                        <p>$9.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('garlic\ bread.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Galactic Garlic Bread</h3>
+                        <p>$8.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('onion.avif');"></div>
+                    <div class="menu-info">
+                        <h3>Orbit Onion Rings</h3>
+                        <p>$7.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('shrimp.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Shooting Star Shrimp</h3>
+                        <p>$13.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('sundae.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Starlight Sundae</h3>
+                        <p>$8.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('cheesecake.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Cosmic Cheesecake</h3>
+                        <p>$9.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('gelato.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Galaxy Gelato</h3>
+                        <p>$7.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('mousee.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Meteorite Mousse</h3>
+                        <p>$8.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('parfait.jpeg');"></div>
+                    <div class="menu-info">
+                        <h3>Planetary Parfait</h3>
+                        <p>$9.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('brownie.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Black Hole Brownie</h3>
+                        <p>$10.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('classic-margarita-1.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Martian Margarita</h3>
+                        <p>$11.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('negroni.jpg');"></div>
+                    <div class="menu-info">
+                        <h3>Nebula Negroni</h3>
+                        <p>$10.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-image" style="background-image: url('vodkapunch.jpg');"></div>
+                            <div class="menu-info">
+                                <h3>Pluto Punch</h3>
+                                <p>$9.99</p>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-image" style="background-image: url('sangria.avif');"></div>
+                            <div class="menu-info">
+                                <h3>Solar Sangria</h3>
+                                <p>$11.99</p>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-image" style="background-image: url('spritz.jpg');"></div>
+                            <div class="menu-info">
+                                <h3>Saturn Spritz</h3>
+                                <p>$10.99</p>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-image" style="background-image: url('cooler.jpg');"></div>
+                            <div class="menu-info">
+                                <h3>Comet Cooler</h3>
+                                <p>$12.99</p>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+                <div class="checkout-button">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <button onclick="redirectToCheckout()">Checkout</button>
+                </div>
+            </div>
+            <script src="Menu.js" defer></script>
+        </body>
+        </html>
+        
