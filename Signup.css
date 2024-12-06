@@ -2,13 +2,10 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    line-height: 1.6;
-    overflow-x: hidden;
+    background-color: transparent;
 }
 
 .stars {
@@ -23,52 +20,8 @@ body, html {
 }
 
 @keyframes moveStars {
-    from {background-position: 0 0;}
-    to {background-position: -10000px 5000px;}
-}
-
-ion-icon { 
-    color: #f5e9c8; 
-    font-size: 4em; 
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 110vh;
-    height: 75vh; 
-    top: -100px;
-}
-
-iframe {
-    width: 100%;
-    height: 100%; /* Full height of the container */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #1cb6f8;
-    color: #f5e9c8;
-    border: none;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px; /* Adds space between the map and the button */
-}
-
-button:hover {
-    background-color: #019bdc;
-    transform: scale(1.1);
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
 }
 
 .wrapper { 
@@ -128,4 +81,66 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #ffeb3b;
+}
+
+ion-icon { 
+    color: #f5e9c8; 
+    font-size: 4em; 
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.signup-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    max-width: 400px;
+    width: 100%;
+}
+
+.signup-box h2 {
+    margin-bottom: 20px;
+}
+
+.signup-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1cb6f8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-box button:hover {
+    background-color: #019bdc;
 }
