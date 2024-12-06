@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rustic Roots - Find Us</title>
     <link rel="stylesheet" href="Maps.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <div class="stars"></div>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><ion-icon name="bonfire-outline"></ion-icon></li>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="Menu.html">Menu</a></li>
+                    <li><a href="Homepage.html">About</a></li>
+                    <li><a href="Homepage.html">Join the Club</a></li>
+                    <li><a href="Homepage.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
     <div class="content-container">
         <div class="map-container">
             <iframe 
@@ -22,6 +37,7 @@
             </iframe>
         </div>
         <button onclick="redirectToMain()">Back</button>
+    </div>
     </div>
     <script>
         function redirectToMain() {
