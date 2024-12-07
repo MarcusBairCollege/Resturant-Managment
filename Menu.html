@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustic Roots Menu</title>
+    <link rel="stylesheet" href="Menu.css">
+    <script src="Menu.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="stars"></div>
+    <button class="back-button" onclick="goBack()"> 
+        <ion-icon name="arrow-back-outline"></ion-icon> 
+        Back 
+    </button>
+
+    <button class="cart-icon" onclick="toggleCart()"> 
+        <ion-icon name="cart-outline"></ion-icon> 
+    </button>
+
+    <div class="menu-wrapper">
+        <h1>Our Menu</h1>
+        <section class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-id="steak">
+                    <div class="menu-image" style="background-image: url('Steak.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-steak">Galactic Grilled Steak</h3>
+                        <p class="price" id="price-steak">$29.99</p>
+                        <p class="description">Tender steak grilled to perfection, served with a side of steamed vegetables.</p>
+                        <button class="add-to-cart" onclick="addToCart('steak')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="quinoaSalad">
+                    <div class="menu-image" style="background-image: url('quinoasalad.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-quinoaSalad">Quantum Quinoa Salad</h3>
+                        <p class="price" id="price-quinoaSalad">$21.99</p>
+                        <p class="description">A fresh and vibrant quinoa salad mixed with colorful vegetables and a tangy citrus dressing.</p>
+                        <button class="add-to-cart" onclick="addToCart('quinoaSalad')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="salmon">
+                    <div class="menu-image" style="background-image: url('salmon.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-salmon">Starship Salmon</h3>
+                        <p class="price" id="price-salmon">$26.99</p>
+                        <p class="description">Grilled salmon fillet glazed with a zesty lemon sauce, served with steamed asparagus.</p>
+                        <button class="add-to-cart" onclick="addToCart('salmon')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="asparagusRisotto">
+                    <div class="menu-image" style="background-image: url('Asparagus-risotto.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-asparagusRisotto">Astral Asparagus Risotto</h3>
+                        <p class="price" id="price-asparagusRisotto">$22.99</p>
+                        <p class="description">Creamy risotto blended with tender asparagus and topped with Parmesan cheese.</p>
+                        <button class="add-to-cart" onclick="addToCart('asparagusRisotto')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="noodleBowl">
+                    <div class="menu-image" style="background-image: url('Spicy-Thai-Noodle-Bowls-square-1200.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-noodleBowl">Nova Noodle Bowl</h3>
+                        <p class="price" id="price-noodleBowl">$24.99</p>
+                        <p class="description">Spicy Thai noodles tossed with fresh vegetables and a savory peanut sauce.</p>
+                        <button class="add-to-cart" onclick="addToCart('noodleBowl')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="stuffedChicken">
+                    <div class="menu-image" style="background-image: url('stuffedchicken.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-stuffedChicken">Stellar Stuffed Chicken</h3>
+                        <p class="price" id="price-stuffedChicken">$28.99</p>
+                        <p class="description">Juicy chicken breast stuffed with spinach and cheese, accompanied by garlic mashed potatoes.</p>
+                        <button class="add-to-cart" onclick="addToCart('stuffedChicken')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>                
+
+        <section class="menu-category">
+            <h2>Appetizers</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-id="calamari">
+                    <div class="menu-image" style="background-image: url('Garlic-sauteed-calamari.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-calamari">Cosmic Calamari</h3>
+                        <p class="price" id="price-calamari">$12.99</p>
+                        <p class="description">Lightly battered calamari rings served with a spicy marinara dipping sauce.</p>
+                        <button class="add-to-cart" onclick="addToCart('calamari')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="nachos">
+                    <div class="menu-image" style="background-image: url('nachos.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-nachos">Nebula Nachos</h3>
+                        <p class="price" id="price-nachos">$10.99</p>
+                        <p class="description">Crispy tortilla chips topped with melted cheese, jalapeños, and a dollop of guacamole.</p>
+                        <button class="add-to-cart" onclick="addToCart('nachos')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="avocadoToast">
+                    <div class="menu-image" style="background-image: url('avocado-toast.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-avocadoToast">Astro Avocado Toast</h3>
+                        <p class="price" id="price-avocadoToast">$9.99</p>
+                        <p class="description">Creamy avocado spread over toasted artisan bread, garnished with cherry tomatoes and microgreens.</p>
+                        <button class="add-to-cart" onclick="addToCart('avocadoToast')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="garlicBread">
+                    <div class="menu-image" style="background-image: url('garlic bread.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-garlicBread">Galactic Garlic Bread</h3>
+                        <p class="price" id="price-garlicBread">$8.99</p>
+                        <p class="description">Golden garlic bread slices brushed with a buttery herb blend.</p>
+                        <button class="add-to-cart" onclick="addToCart('garlicBread')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="onionRings">
+                    <div class="menu-image" style="background-image: url('onion.avif');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-onionRings">Orbit Onion Rings</h3>
+                        <p class="price" id="price-onionRings">$7.99</p>
+                        <p class="description">Crispy onion rings coated in a seasoned batter, served with a tangy dipping sauce.</p>
+                        <button class="add-to-cart" onclick="addToCart('onionRings')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="shrimp">
+                    <div class="menu-image" style="background-image: url('shrimp.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-shrimp">Shooting Star Shrimp</h3>
+                        <p class="price" id="price-shrimp">$13.99</p>
+                        <p class="description">Grilled shrimp skewers marinated in a spicy citrus sauce.</p>
+                        <button class="add-to-cart" onclick="addToCart('shrimp')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-id="sundae">
+                    <div class="menu-image" style="background-image: url('sundae.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-sundae">Starlight Sundae</h3>
+                        <p class="price" id="price-sundae">$8.99</p>
+                        <p class="description">Classic vanilla sundae topped with hot fudge, whipped cream, and a cherry.</p>
+                        <button class="add-to-cart" onclick="addToCart('sundae')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="cheesecake">
+                    <div class="menu-image" style="background-image: url('cheesecake.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-cheesecake">Cosmic Cheesecake</h3>
+                        <p class="price" id="price-cheesecake">$9.99</p>
+                        <p class="description">Rich and creamy cheesecake with a graham cracker crust, drizzled with berry compote.</p>
+                        <button class="add-to-cart" onclick="addToCart('cheesecake')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="gelato">
+                    <div class="menu-image" style="background-image: url('gelato.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-gelato">Galaxy Gelato</h3>
+                        <p class="price" id="price-gelato">$7.99</p>
+                        <p class="description">Smooth and creamy gelato in a variety of flavors, perfect for any sweet tooth.</p>
+                        <button class="add-to-cart" onclick="addToCart('gelato')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="mousse">
+                    <div class="menu-image" style="background-image: url('mousee.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-mousse">Meteorite Mousse</h3>
+                        <p class="price" id="price-mousse">$8.99</p>
+                        <p class="description">Light and airy chocolate mousse topped with a sprinkle of cocoa powder.</p>
+                        <button class="add-to-cart" onclick="addToCart('mousse')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="parfait">
+                    <div class="menu-image" style="background-image: url('parfait.jpeg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-parfait">Planetary Parfait</h3>
+                        <p class="price" id="price-parfait">$9.99</p>
+                        <p class="description">Layers of yogurt, granola, and fresh berries for a refreshing treat.</p>
+                        <button class="add-to-cart" onclick="addToCart('parfait')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="brownie">
+                    <div class="menu-image" style="background-image: url('brownie.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-brownie">Black Hole Brownie</h3>
+                        <p class="price" id="price-brownie">$10.99</p>
+                        <p class="description">Decadent chocolate brownie served warm with a scoop of vanilla ice cream.</p>
+                        <button class="add-to-cart" onclick="addToCart('brownie')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <section class="menu-category">
+            <h2>Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-id="martianMargarita">
+                    <div class="menu-image" style="background-image: url('classic-margarita-1.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-martianMargarita">Martian Margarita</h3>
+                        <p class="price" id="price-martianMargarita">$11.99</p>
+                        <p class="description">A classic margarita with a twist of lime and a splash of orange liqueur.</p>
+                        <button class="add-to-cart" onclick="addToCart('martianMargarita')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="nebulaNegroni">
+                    <div class="menu-image" style="background-image: url('negroni.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-nebulaNegroni">Nebula Negroni</h3>
+                        <p class="price" id="price-nebulaNegroni">$10.99</p>
+                        <p class="description">A bold blend of gin, Campari, and sweet vermouth, garnished with an orange peel.</p>
+                        <button class="add-to-cart" onclick="addToCart('nebulaNegroni')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="plutoPunch">
+                    <div class="menu-image" style="background-image: url('vodkapunch.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-plutoPunch">Pluto Punch</h3>
+                        <p class="price" id="price-plutoPunch">$9.99</p>
+                        <p class="description">A fruity and refreshing punch with a mix of tropical juices and a hint of rum.</p>
+                        <button class="add-to-cart" onclick="addToCart('plutoPunch')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="solarSangria">
+                    <div class="menu-image" style="background-image: url('sangria.avif');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-solarSangria">Solar Sangria</h3>
+                        <p class="price" id="price-solarSangria">$11.99</p>
+                        <p class="description">A vibrant sangria with red wine, fresh fruits, and a splash of brandy.</p>
+                        <button class="add-to-cart" onclick="addToCart('solarSangria')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="saturnSpritz">
+                    <div class="menu-image" style="background-image: url('spritz.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-saturnSpritz">Saturn Spritz</h3>
+                        <p class="price" id="price-saturnSpritz">$10.99</p>
+                        <p class="description">A bubbly spritz with Prosecco, Aperol, and a dash of soda water.</p>
+                        <button class="add-to-cart" onclick="addToCart('saturnSpritz')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-id="cometCooler">
+                    <div class="menu-image" style="background-image: url('cooler.jpg');"></div>
+                    <div class="menu-info">
+                        <h3 id="name-cometCooler">Comet Cooler</h3>
+                        <p class="price" id="price-cometCooler">$12.99</p>
+                        <p class="description">A cool and refreshing cocktail with vodka, cucumber, and mint.</p>
+                        <button class="add-to-cart" onclick="addToCart('cometCooler')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>                
+        <div class="cart-wrapper"> 
+            <h2>Your Cart</h2> 
+            <div class="cart-items"></div> 
+            <div class="cart-total"> 
+                <p>Total: $<span id="cart-total">0.00</span></p> 
+            </div> 
+                <button onclick="checkout()">Checkout</button> </div>
+            </div>
+      </body>
+</html>
+        
