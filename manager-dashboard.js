@@ -1,4 +1,3 @@
-// Ensure menuData is defined
 const menuData = JSON.parse(localStorage.getItem('menuData')) || {
     steak: { name: 'Galactic Grilled Steak', price: 29.99, image: 'Steak.jpg' },
     quinoaSalad: { name: 'Quantum Quinoa Salad', price: 21.99, image: 'quinoasalad.jpg' },
@@ -32,17 +31,13 @@ document.getElementById('update-form').addEventListener('submit', function(event
     const newName = document.getElementById('new-name').value;
     const newPrice = parseFloat(document.getElementById('new-price').value);
 
-    // Debugging log
     console.log("Updating item:", selectedItem, newName, newPrice);
 
-    // Update menu data
     menuData[selectedItem].name = newName;
     menuData[selectedItem].price = newPrice;
 
-    // Save updated data to local storage
     localStorage.setItem('menuData', JSON.stringify(menuData));
 
-    // Debugging log
     console.log("Updated menu data saved to local storage:", localStorage.getItem('menuData'));
 
     alert('Menu item updated successfully!');

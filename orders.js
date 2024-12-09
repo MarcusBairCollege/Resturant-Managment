@@ -4,11 +4,9 @@ function redirectToManager() {
 
 let orders = JSON.parse(localStorage.getItem('orders')) || [];
 
-// Function to display orders on the page
 function displayOrders() {
     const ordersList = document.querySelector('.orders-list');
 
-    // Ensure the element exists
     if (ordersList) {
         ordersList.innerHTML = '';
 
@@ -32,14 +30,12 @@ function displayOrders() {
     }
 }
 
-// Function to remove an order
 function removeOrder(index) {
     orders.splice(index, 1);
     localStorage.setItem('orders', JSON.stringify(orders));
     displayOrders();
 }
 
-// Render the orders on page load
 window.onload = () => {
     displayOrders();
 };
