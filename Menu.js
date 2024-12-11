@@ -83,6 +83,8 @@ function renderCart() {
     });
 
     document.getElementById('cart-total').innerText = total.toFixed(2);
+    console.log('Cart Total:', total);
+    cart.forEach(item => console.log('Cart Item:', item));
 }
 
 function removeFromCart(index) {

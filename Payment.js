@@ -1,5 +1,5 @@
-function goBack(){
-    window.location.href='Menu.html'
+function goBack() {
+    window.location.href = 'Menu.html';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateTotalPrice() {
         const orderTotal = JSON.parse(localStorage.getItem('orderTotal')) || 0;
         totalPriceElement.textContent = `$${orderTotal.toFixed(2)}`;
+        console.log('Order Total:', orderTotal);
     }
 
     function showPaymentSection(sectionId) {

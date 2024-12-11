@@ -188,6 +188,11 @@ header ion-icon{
     margin-left: 20px; 
 }
 
+.order-total{
+    font-size: 1.5em;
+    padding-top: 20px;
+}
+
 .orders-list .total {
     margin-top: 20px;
     font-size: 1.2em;
