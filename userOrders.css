@@ -1,0 +1,213 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: auto; /* Allow scrolling */
+    background-color: transparent;
+}
+
+.stars {
+    background: url('stars.jpg') repeat top center;
+    animation: moveStars 750s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto; /* Ensure the wrapper spans the full width */
+}
+
+header {
+    background-color: transparent;
+    color: #f5e9c8;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center the header content */
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center; /* Center the navigation links */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Adjust gap as needed */
+}
+
+header nav ul li {
+    display: inline;
+    margin-top: 20px;
+}
+
+header nav ul li a {
+    color: #f5e9c8;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+header ion-icon{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4em; /* Make the ion icon larger */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.ion-icon-left:hover {
+    transform: scale(1.2);
+}
+
+.back-button { 
+    position: absolute; 
+    top: 100px; 
+    left: 20px; 
+    padding: 10px 20px; 
+    font-size: 1em; 
+    cursor: pointer; 
+    background-color: #1cb6f8; 
+    color: #fff; 
+    border: none; 
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+} 
+
+.back-button ion-icon { 
+    margin-right: 5px;
+    font-size: 1.5em; /* Make the ion icon larger */
+} 
+
+.back-button:hover { 
+    background-color: #019bdc; 
+    transform: scale(1.1);
+}
+
+.orders-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: auto; /* Center the order container vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    max-height: 80%; /* Allow scrolling within the order container */
+}
+
+.orders-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.orders-list {
+    text-align: left;
+    max-height: 60vh;
+    overflow-y: auto;
+    width: 100%;
+    padding-right: 10px; /* Prevent scrollbar overlap */
+    box-sizing: border-box;
+}
+
+.orders-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.orders-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #f5e9c8;
+}
+
+.order-item-image {
+    width: 50px; /* Smaller image size */
+    height: 50px; /* Smaller image size */
+    margin-right: 20px;
+}
+
+.order-item-description {
+    display: flex;
+    justify-content: space-between; /* Space between name and price */
+    flex-grow: 1;
+}
+
+.order-item-name {
+    font-size: 1.2em;
+}
+
+.order-item-price {
+    font-size: 1em;
+    color: #ffeb3b;
+    margin-left: 20px; /* Add space between name and price */
+}
+
+.orders-list .total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.order-again {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #1cb6f8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.order-again:hover {
+    background-color: #019bdc;
+}

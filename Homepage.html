@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rustic Roots Bar & Kitchen</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <link rel="stylesheet" href="Homepage.css">
+    <script src="Homepage.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -15,7 +19,7 @@
                 <ul>
                     <li><ion-icon name="bonfire-outline"></ion-icon></li>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="Menu.html">Menu</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#club">Join the Club</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -42,7 +46,7 @@
                 <div class="club-image"></div>
                 <div class="club-text">
                     <h2>Join the Club!</h2>
-                    <p>Join the Rustic Roots Rewards Club and unlock exclusive benefits and special offers tailored just for you. Enjoy every dining experience with added perks, from priority reservations to personalized discounts. Become a member today and let Rustic Roots elevate your culinary adventures to new heights!</p>
+                    <p>Join the Rustic Roots Rewards Club. Enjoy every dining experience with added perks, from Pre-ordering food to receiving updates on new menu items . Become a member today and let Rustic Roots elevate your culinary adventures to new heights!</p>
                     <button onclick="redirectToSignUpPage()">Sign Up Today!</button>
                 </div>
             </div>
@@ -52,7 +56,7 @@
             <div class="menu-content">
                 <div class="menu-text">
                     <h2>Explore Our Menu</h2>
-                    <p>Dive into the delicious world of Rustic Roots by exploring our diverse and delectable menu. From farm-fresh starters to mouth-watering mains, each dish is crafted to perfection with the finest ingredients. Come take a look and find your new favorite meal today!</p>
+                    <p>Welcome to Rustic Roots, a futuristic dining experience that takes you on a cosmic culinary journey. Our menu is a blend of innovation and tradition, featuring dishes crafted with the finest ingredients from Earth and beyond.</p>
                     <button onclick="redirectToMenuPage()">View Menu</button>
                 </div>
                 <div class="menu-image"></div>
@@ -63,38 +67,69 @@
             <div class="location-content">
                 <div class="location-image"></div>
                 <div class="location-text">
-                    <h2>Find our nearest Resturaunt!</h2>
-                    <p>With multiple locations, we make it easy for you to enjoy our delicious meals wherever you are. Click below to find the closest restaurant!</p>
-                    <button onclick="redirectToMap()">Find Resturaunt Today!</button>
+                    <h2>Find our nearest Restaurant!</h2>
+                    <p>We make it easy for you to find our delicious meals wherever you are. Click below to find the closest restaurant!</p>
+                    <button onclick="redirectToMap()">Find Restaurant Today!</button>
                 </div>
             </div>
         </section>
-        
+
         <section id="contact">
-            <h2 style="color: white;">Contact Us</h2>
-            <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="contact-wrapper">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="from_name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="from_email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Send</button>
+                </form>
                 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <input type="submit" value="Submit">
-            </form>
+                </form>
+                <p id="status"></p>
+            </div>
         </section>
-        
-        <footer>
-            <p>&copy; 2024 Rustic Roots Bar & Kitchen. All rights reserved.</p>
-        </footer>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>About Rustic Roots</h4>
+                    <p>Rustic Roots is a premium dining experience, blending the finest local ingredients with innovative culinary techniques. Join us for a meal that transcends the ordinary and delights the senses.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>123 Culinary Lane,<br>
+                    Gourmet City, GC 12345<br>
+                    Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.twitter.com"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="https://www.instagram.com"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="https://www.linkedin.com"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rustic Roots. All rights reserved.</p>
+            </div>
+        </footer>        
     </div>
-    <script src="Homepage.js" defer></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-
-
-<!-- inut type number -->
