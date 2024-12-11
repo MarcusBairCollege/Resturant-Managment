@@ -27,6 +27,11 @@ body, html {
     to {background-position: -10000px 5000px;}
 }
 
+ion-icon { 
+    color: #f5e9c8; 
+    font-size: 4em; 
+}
+
 .content-container {
     display: flex;
     flex-direction: column;
@@ -37,8 +42,9 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120vh;
-    height: 80vh; /* Adjust the height as needed */
+    width: 110vh;
+    height: 75vh; 
+    top: -100px;
 }
 
 iframe {
@@ -57,10 +63,70 @@ button {
     border: none;
     border-radius: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px; /* Adds space between the map and the button */
+    margin-top: 20px; 
+    font-size: 1vh;
 }
 
 button:hover {
     background-color: #019bdc;
     transform: scale(1.1);
+}
+
+.wrapper { 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+:root { 
+    --header-height: 100px; 
+}
+
+header {
+    background-color: transparent;
+    color: #f5e9c8;
+    padding: 0px 0;
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    transition: margin-left 0.3s ease;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding-top: 0px;
+    margin: 0;
+    display: flex;
+    gap: 50px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li:first-child {
+    margin-right: 330px;
+}
+
+header nav ul li a {
+    color: #f5e9c8;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffeb3b;
 }

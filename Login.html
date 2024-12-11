@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rustic Roots</title>
+    <link rel="stylesheet" href="Login.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><ion-icon name="bonfire-outline"></ion-icon></li>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="Menu.html">Menu</a></li>
+                    <li><a href="Homepage.html">About</a></li>
+                    <li><a href="Homepage.html">Join the Club</a></li>
+                    <li><a href="Homepage.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="login-container">
+            <div class="login-box">
+                <h2>User Login</h2>
+                <form id="login-form">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div class="login-box manager-login">
+                <h2>Manager Login</h2>
+                <form id="manager-login-form">
+                    <label for="manager-username">Username:</label>
+                    <input type="text" id="manager-username" name="username" required>
+                    
+                    <label for="manager-password">Password:</label>
+                    <input type="password" id="manager-password" name="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Login.js"></script>
+</body>
+</html>
