@@ -48,37 +48,34 @@ h1{
 header {
     background-color: transparent;
     color: #f5e9c8;
-    padding: 0px 0;
+    padding: 0;
     position: fixed;
     width: 100%;
-    height: var(--header-height);
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; 
+    justify-content: center; 
     align-items: center;
-    transition: margin-left 0.3s ease;
 }
 
 header nav {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: center; 
 }
 
 header nav ul {
     list-style: none;
-    padding-top: 0px;
+    padding: 0;
     margin: 0;
     display: flex;
-    gap: 50px;
+    gap: 20px; /* Adjust gap as needed */
 }
 
 header nav ul li {
     display: inline;
-}
-
-header nav ul li:first-child {
-    margin-right: 400px;
+    margin-top: 20px;
 }
 
 header nav ul li a {
@@ -92,9 +89,18 @@ header nav ul li a:hover {
     color: #ffeb3b;
 }
 
+header ion-icon{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
 .back-button { 
     position: absolute; 
-    top: 20px; 
+    top: 100px; 
     left: 20px; 
     padding: 10px 20px; 
     font-size: 1em; 
@@ -109,12 +115,13 @@ header nav ul li a:hover {
 } 
 
 .back-button ion-icon { 
-    margin-right: 5px; 
+    margin-right: 5px;
+    font-size: 1.5em; 
 } 
 
 .back-button:hover { 
     background-color: #019bdc; 
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 .menu-wrapper {
@@ -271,13 +278,31 @@ header nav ul li a:hover {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: none;
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 2em;
-    color: #f5e9c8;
+    font-size: 24px;
+    color: #fff;
     z-index: 1000;
 }
+
+.cart-icon ion-icon {
+    font-size: 30px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
 
 /* Cart Wrapper */
 .cart-wrapper {
@@ -286,7 +311,7 @@ header nav ul li a:hover {
     top: 60px;
     right: 20px;
     width: 350px;
-    background-color: black;
+    background-color: grey;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

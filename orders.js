@@ -1,27 +1,23 @@
-function redirectToManager() {
-    window.location.href = 'manager-dashboard.html'
-}
+let managerOrders = JSON.parse(localStorage.getItem('managerOrders')) || [];
 
-let orders = JSON.parse(localStorage.getItem('orders')) || [];
-
-function displayOrders() {
+function displayManagerOrders() {
     const ordersList = document.querySelector('.orders-list');
 
     if (ordersList) {
         ordersList.innerHTML = '';
 
-        orders.forEach((order, index) => {
+        managerOrders.forEach((order, index) => {
             const orderItem = document.createElement('div');
             orderItem.className = 'order-item';
             orderItem.innerHTML = `
-                <h3>Order ${index + 1}</h3>
+                <h3>Order ${index + 1} - ${order.date}</h3>
                 <ul>
                     ${order.items.map(item => `
                         <li>${item.name} - $${item.price.toFixed(2)}</li>
                     `).join('')}
                 </ul>
                 <p><strong>Total: $${order.total.toFixed(2)}</strong></p>
-                <button onclick="removeOrder(${index})">Remove</button>
+                <button onclick="removeManagerOrder(${index})">Remove</button>
             `;
             ordersList.appendChild(orderItem);
         });
@@ -30,12 +26,16 @@ function displayOrders() {
     }
 }
 
-function removeOrder(index) {
-    orders.splice(index, 1);
-    localStorage.setItem('orders', JSON.stringify(orders));
-    displayOrders();
+function removeManagerOrder(index) {
+    managerOrders.splice(index, 1);
+    localStorage.setItem('managerOrders', JSON.stringify(managerOrders));
+    displayManagerOrders();
 }
 
 window.onload = () => {
-    displayOrders();
+    displayManagerOrders();
 };
+
+function redirectToManager(){
+    window.location.href = 'manager-dashboard.html';
+}

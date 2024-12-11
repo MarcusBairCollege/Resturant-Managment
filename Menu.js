@@ -1,9 +1,9 @@
 function goBack() {
-    window.location.href = 'Homepage.html'
+    window.location.href = 'Homepage.html';
 }
 
 function redirectToCheckout() {
-    window.location.href = 'Checkout.html'
+    window.location.href = 'Checkout.html';
 }
 
 const menuData = JSON.parse(localStorage.getItem('menuData')) || {
@@ -33,13 +33,8 @@ const menuData = JSON.parse(localStorage.getItem('menuData')) || {
     cometCooler: { name: 'Comet Cooler', price: 12.99, image: 'cooler.jpg' }
 };
 
-// Initialize the cart from local storage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Initialize the orders from local storage
-let orders = JSON.parse(localStorage.getItem('orders')) || [];
-
-// Function to update the UI with the latest prices and names
 function updatePrices() {
     for (const key in menuData) {
         const item = menuData[key];
@@ -56,15 +51,19 @@ function updatePrices() {
     }
 }
 
-// Function to add an item to the cart
+function updateCartCount() {
+    const cartCount = document.querySelector('.cart-count');
+    cartCount.innerText = cart.length;
+}
+
 function addToCart(id) {
     const item = menuData[id];
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+    updateCartCount(); 
 }
 
-// Function to render the cart
 function renderCart() {
     const cartItems = document.querySelector('.cart-items');
     cartItems.innerHTML = '';
@@ -86,40 +85,55 @@ function renderCart() {
     document.getElementById('cart-total').innerText = total.toFixed(2);
 }
 
-// Function to remove an item from the cart
 function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+    updateCartCount(); 
 }
 
-// Function to handle checkout and save the order
 function checkout() {
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-    const order = {
-        items: [...cart],
-        total: total
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items to your cart before proceeding to checkout.");
+        return;
+    }
+
+    const orderTotal = cart.reduce((total, item) => total + item.price, 0);
+
+    localStorage.setItem('orderTotal', orderTotal.toFixed(2));
+    localStorage.setItem('orderItems', JSON.stringify(cart));
+
+    const newOrder = {
+        items: cart,
+        total: orderTotal,
+        date: new Date().toLocaleString()
     };
-    
-    orders.push(order);
-    localStorage.setItem('orders', JSON.stringify(orders));
 
-    alert('Order placed successfully!');
+    const userOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+    userOrders.push(newOrder);
+    localStorage.setItem('userOrders', JSON.stringify(userOrders));
 
-    // Clear the cart
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
+    const managerOrders = JSON.parse(localStorage.getItem('managerOrders')) || [];
+    managerOrders.push(newOrder);
+    localStorage.setItem('managerOrders', JSON.stringify(managerOrders));
+
+    alert('Thank you for your purchase!');
+    localStorage.setItem('cart', JSON.stringify([]));
     renderCart();
+    updateCartCount();
+    window.location.href = 'Payment.html';
 }
 
-// Function to toggle cart visibility
+
+
 function toggleCart() {
     const cartWrapper = document.querySelector('.cart-wrapper');
     cartWrapper.classList.toggle('visible');
 }
 
-// Render the cart and update prices on page load
 window.onload = () => {
     renderCart();
     updatePrices();
+    updateCartCount(); 
 };
